@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="forest">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../design/nationalpark-font.css">
+  <link rel="stylesheet" href="../design/theme.css">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="card popup-card hidden" id="fail-screen">
+    <div class="popup-header">
+      <h1 class="card-title fail-title">Journey ended</h1>
+      <img class="popup-icon" src="../images/JourneyPedia.png" alt="JourneyPedia">
+    </div>
+    <p class="fail-message" id="fail-message"></p>
+    <div class="btn-group popup-actions">
+      <button class="btn btn-primary" id="fail-new-journey" type="button">New Journey</button>
+    </div>
+  </div>
+
+  <div class="card popup-card hidden" id="win-screen">
+    <div class="popup-header">
+      <h1 class="card-title win-title">Made it!</h1>
+      <img class="popup-icon" src="../images/JourneyPedia.png" alt="JourneyPedia">
+    </div>
+    <p class="win-intro" id="win-intro"></p>
+    <div class="win-path-window">
+      <div class="win-path-scroll" id="win-path-scroll"></div>
+    </div>
+    <div class="btn-group popup-actions win-actions">
+      <button class="btn btn-primary" id="share-copy" type="button">Share &amp; Copy</button>
+      <button class="btn btn-secondary" id="new-journey" type="button">New Journey</button>
+    </div>
+    <p class="share-status hidden" id="share-status">Copied to clipboard!</p>
+  </div>
+
+  <div class="card popup-card" id="setup-screen">
+    <div class="popup-header">
+      <div class="popup-header-text">
+        <h1 class="card-title">JourneyPedia</h1>
+        <p class="card-subtitle">Record your wikipedia journey</p>
+      </div>
+      <img class="popup-icon" src="../images/JourneyPedia.png" alt="JourneyPedia">
+    </div>
+
+    <div class="form-control">
+      <label class="label" for="point-a">
+        Point A<span id="point-a-suffix"></span>
+      </label>
+      <div class="input-row">
+        <input class="input" type="text" id="point-a" placeholder="Starting article URL">
+        <button class="btn btn-secondary btn-sm random-btn" id="random-a" type="button" title="Random article">🎲</button>
+      </div>
+    </div>
+
+    <div class="form-control">
+      <label class="label" for="point-b">
+        Point B<span id="point-b-suffix"></span>
+      </label>
+      <div class="input-row">
+        <input class="input" type="text" id="point-b" placeholder="Destination article URL">
+        <button class="btn btn-secondary btn-sm random-btn" id="random-b" type="button" title="Random article">🎲</button>
+      </div>
+    </div>
+
+    <div class="btn-group popup-actions">
+      <button class="btn btn-primary" id="start-journey" type="button">Start Journey!</button>
+      <button class="btn btn-error hidden" id="reset-journey" type="button">Reset</button>
+    </div>
+  </div>
+
+  <div class="modal hidden" id="random-modal">
+    <div class="modal-box">
+      <p class="modal-title">Random article</p>
+      <p class="modal-article" id="random-article-title"></p>
+      <div class="btn-group">
+        <button class="btn btn-primary btn-sm" id="random-confirm" type="button">Use this article</button>
+        <button class="btn btn-secondary btn-sm" id="random-cancel" type="button">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../scripts/utils/wiki-utils.js"></script>
+  <script src="../scripts/utils/path.js"></script>
+  <script src="win-path.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

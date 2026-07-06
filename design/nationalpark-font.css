@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=National+Park:wght@200..800&display=swap");
+
+:root {
+  --font-national-park: "National Park", sans-serif;
+}
+
+body,
+#atopedia-timer,
+#atopedia-timer * {
+  font-family: var(--font-national-park);
+  font-optical-sizing: auto;
+  font-style: normal;
+}

@@ -1,0 +1,29 @@
+.atopedia-victory-banner {
+  position: fixed;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2147483647;
+  background: oklch(18.522% 0.007 17.911);
+  color: oklch(83.768% 0.001 17.911);
+  border: 2px solid oklch(68.628% 0.185 148.958);
+  border-radius: 1rem;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  font-family: system-ui, -apple-system, sans-serif;
+  pointer-events: none;
+}
+
+.atopedia-victory-title {
+  margin: 0 0 0.25rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: oklch(68.628% 0.185 148.958);
+}
+
+.atopedia-victory-subtitle {
+  margin: 0;
+  font-size: 0.8125rem;
+  opacity: 0.85;
+}

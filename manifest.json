@@ -1,0 +1,47 @@
+{
+  "name": "JourneyPedia",
+  "description": "Record your Wikipedia journey from Point A to Point B",
+  "version": "1.0",
+  "manifest_version": 3,
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com;"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": "images/JourneyPedia.png"
+  },
+  "permissions": ["storage"],
+  "host_permissions": ["*://*.wikipedia.org/*"],
+  "web_accessible_resources": [
+    {
+      "resources": ["images/JourneyPedia.png"],
+      "matches": ["*://*.wikipedia.org/*"]
+    }
+  ],
+  "background": {
+    "service_worker": "scripts/background/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.wikipedia.org/wiki/*"],
+      "js": [
+        "scripts/utils/wiki-utils.js",
+        "scripts/utils/path.js",
+        "scripts/journey/highlight-links.js",
+        "scripts/fail/fail.js",
+        "scripts/victory/victory.js",
+        "scripts/journey/journey.js",
+        "timer/timer.js"
+      ],
+      "css": [
+        "design/nationalpark-font.css",
+        "scripts/journey/content.css",
+        "scripts/journey/journey.css",
+        "scripts/fail/fail.css",
+        "scripts/victory/victory.css",
+        "timer/timer.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+html.atopedia-paused {
+  background: #000 !important;
+}
+
+html.atopedia-paused .mw-page-container,
+html.atopedia-paused .vector-header-container,
+html.atopedia-paused #mw-navigation,
+html.atopedia-paused #footer,
+html.atopedia-paused #mw-footer {
+  display: none !important;
+}
+
+#atopedia-pause-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 2147483646;
+  background: #000;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+#atopedia-pause-overlay.is-visible {
+  display: flex;
+}
+
+.atopedia-pause-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  text-align: center;
+  max-width: 360px;
+}
+
+.atopedia-pause-icon {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
+.atopedia-pause-text {
+  margin: 0;
+  color: #fff;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
